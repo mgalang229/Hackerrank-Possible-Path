@@ -1,27 +1,28 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
-#define ll long long
-
-ll gcd(ll a, ll b) {
-	if(b==0)
+long long __gcd(long long a, long long b) {
+	if (b == 0) {
 		return a;
-	return gcd(b, a%b);
+	}
+	return __gcd(b, a % b);
 }
 
 int main() {
-	ios::sync_with_stdio(0);
+	ios::sync_with_stdio(false);
 	cin.tie(0);
-	
 	int t;
 	cin >> t;
-	while(t--) {
-		ll a, b, x, y;
+	while (t--) {
+		long long a, b, x, y;
 		cin >> a >> b >> x >> y;
-		if(gcd(a, b)==gcd(x, y))
+		if (__gcd(a, b) == __gcd(x, y)) {
 			cout << "YES";
-		else
+		} else {
 			cout << "NO";
-		cout << "\n";
+		}
+		cout << '\n';
 	}
+	return 0;
 }
